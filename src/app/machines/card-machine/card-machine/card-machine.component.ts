@@ -13,6 +13,7 @@ export class CardMachineComponent implements OnInit {
   ngOnInit(): void {
   }
 
+  
 
   changeEtat(){
 

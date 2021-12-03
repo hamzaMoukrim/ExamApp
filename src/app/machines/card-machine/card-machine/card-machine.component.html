@@ -8,7 +8,9 @@
 
       <li class="list-group-item">systemEx : {{ machine.systemExp }}</li>
 
-      <li class="list-group-item">Etat : demare</li>
+      <li class="list-group-item">
+        Etat :{{ machine.etat ? "demaree" : "arrete" }}
+      </li>
     </ul>
   </div>
   <div class="card-body">
@@ -17,6 +19,7 @@
         Arrete
       </button>
     </div>
+
     <ng-template #arrete>
       <button (click)="changeEtat()" type="button" class="btn btn-success">
         Demarer
