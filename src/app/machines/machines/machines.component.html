@@ -1,0 +1,10 @@
+<div class="container">
+  <div class="row">
+    <div
+      *ngFor="let machine of machines"
+      class="col-md-4 col-xl-3 col-sm-6 mb-2"
+    >
+      <app-card-machine [machine]="machine"> </app-card-machine>
+    </div>
+  </div>
+</div>

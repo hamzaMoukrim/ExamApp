@@ -1,0 +1,26 @@
+<div class="card" mr-1 style="width: 18rem">
+  <div [routerLink]="['/update', machine._id]">
+    <div class="card-body">
+      <h5 class="card-title">Machine : {{ machine.nom }}</h5>
+    </div>
+    <ul class="list-group list-group-flush">
+      <li class="list-group-item">Address IP : {{ machine.addressIP }}</li>
+
+      <li class="list-group-item">systemEx : {{ machine.systemExp }}</li>
+
+      <li class="list-group-item">Etat : demare</li>
+    </ul>
+  </div>
+  <div class="card-body">
+    <div *ngIf="machine.etat; else arrete">
+      <button (click)="changeEtat()" type="button" class="btn btn-danger">
+        Arrete
+      </button>
+    </div>
+    <ng-template #arrete>
+      <button (click)="changeEtat()" type="button" class="btn btn-success">
+        Demarer
+      </button>
+    </ng-template>
+  </div>
+</div>

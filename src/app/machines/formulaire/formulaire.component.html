@@ -1,0 +1,82 @@
+<form (ngSubmit)="onSubmit()" [formGroup]="form">
+  <h1>Create new Machine</h1>
+
+  <!--  -->
+  <div class="container">
+    <div class="row">
+      <div class="mb-3">
+        <label class="form-label">Nom du machine</label>
+        <input
+          name="name"
+          id="name"
+          formControlName="name"
+          required
+          type="text"
+          class="form-control"
+          placeholder="Nom"
+        />
+      </div>
+      <div *ngIf="f.name.touched && f.name.invalid" class="">
+        <div *ngIf="f.name.errors && f.name.errors.required">
+          Name is required.
+        </div>
+
+        <div *ngIf="f.name.errors && f.name.errors.minlength">
+          Name should be 3 character.
+        </div>
+      </div>
+      <!--  -->
+
+      <!--  -->
+      <div class="mb-3">
+        <label class="form-label">Nom du machine</label>
+        <input
+          name="address"
+          id="address"
+          formControlName="address"
+          required
+          type="text"
+          class="form-control"
+          placeholder="Address"
+        />
+      </div>
+      <div *ngIf="f.address.touched && f.address.invalid" class="">
+        <div *ngIf="f.address.errors && f.address.errors.required">
+          address is required.
+        </div>
+
+        <div *ngIf="f.address.errors && f.address.errors.minlength">
+          address should be 3 character.
+        </div>
+      </div>
+      <!--  -->
+
+      <!--  -->
+      <div class="mb-3">
+        <label class="form-label">systeme d'exploitation du machine</label>
+        <input
+          name="system"
+          id="system"
+          formControlName="system"
+          required
+          type="text"
+          class="form-control"
+          placeholder="system"
+        />
+      </div>
+      <div *ngIf="f.system.touched && f.system.invalid" class="">
+        <div *ngIf="f.system.errors && f.system.errors.required">
+          Name is required.
+        </div>
+
+        <div *ngIf="f.system.errors && f.system.errors.minlength">
+          Name should be 3 character.
+        </div>
+      </div>
+      <!--  -->
+    </div>
+  </div>
+  <div class="col text-center">
+    <button class="btn btn-primary" type="submit">create</button>
+  </div>
+</form>
